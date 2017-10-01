@@ -8,7 +8,7 @@ else
   echo "Found EAR_FILE_URL environment variable for downloading artifact!"
   echo "Executing curl -u -o $JBOSS_HOME/standalone/deployments/dear.ear -O $EAR_FILE_URL"
   curl -o $JBOSS_HOME/standalone/deployments/dear.ear -O $EAR_FILE_URL
-  ls -al $JBOSS_HOME/standalone/deployments
+  ls -al $JBOSS_HOME/standalone/deployments/
 fi
 
 # Call default assemble script
