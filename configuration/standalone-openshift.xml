@@ -31,9 +31,9 @@
 
     <system-properties>
         <property name="runtime.environment" value="${env.RUNTIME_ENVIRONMENT}"/>
-        <property name="taq.prop.loc" value="${env.TAQ_DIR}"/>
-        <property name="taq.data.loc" value="${env.TAQ_DIR}"/>
-        <property name="taq.log.loc" value="${env.TAQ_DIR}"/>
+        <property name="taq.prop.loc" value="${env.TAQ_PROP_DIR}"/>
+        <property name="taq.data.loc" value="${env.TAQ_DATA_DIR}"/>
+        <property name="taq.log.loc" value="${env.TAQ_LOG_DIR}"/>
      </system-properties>
 
     <management>
