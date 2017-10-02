@@ -309,7 +309,13 @@
                     <protocol type="pbcast.NAKACK2"/>
                     <protocol type="UNICAST3"/>
                     <protocol type="pbcast.STABLE"/>
-                    <!--WARNING: No password defined for JGroups cluster. AUTH protocol has been disabled. Please define JGROUPS_CLUSTER_PASSWORD. -->
+                    
+                <protocol type="AUTH">
+                    <property name="auth_class">org.jgroups.auth.MD5Token</property>
+                    <property name="token_hash">SHA</property>
+                    <property name="auth_value">kJZLvfQr3hZg</property>
+                </protocol>
+
                     <protocol type="pbcast.GMS"/>
                     <protocol type="UFC"/>
                     <protocol type="MFC"/>
@@ -326,7 +332,13 @@
                     <protocol type="pbcast.NAKACK2"/>
                     <protocol type="UNICAST3"/>
                     <protocol type="pbcast.STABLE"/>
-                    <!--WARNING: No password defined for JGroups cluster. AUTH protocol has been disabled. Please define JGROUPS_CLUSTER_PASSWORD. -->
+                    
+                <protocol type="AUTH">
+                    <property name="auth_class">org.jgroups.auth.MD5Token</property>
+                    <property name="token_hash">SHA</property>
+                    <property name="auth_value">kJZLvfQr3hZg</property>
+                </protocol>
+
                     <protocol type="pbcast.GMS"/>
                     <protocol type="MFC"/>
                     <protocol type="FRAG2"/>
