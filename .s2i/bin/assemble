@@ -3,7 +3,7 @@
 # Download and place binary in JBoss. EAR_FILE_URL variable is specified as
 # an environment variable in the BuildConfig
 
-if [[ -v $STANDALONE_FILE_NAME ]]; then
+if [ ! -z $STANDALONE_FILE_NAME ]; then
   echo "Standalone file $STANDALONE_FILE_NAME"
   cp /tmp/src/configuration/$STANDALONE_FILE_NAME /tmp/src/configuration/standalone-openshift.xml
   ls -al /tmp/src/configuration
