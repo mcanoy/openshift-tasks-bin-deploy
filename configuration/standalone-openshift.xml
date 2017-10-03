@@ -140,9 +140,29 @@
         <subsystem xmlns="urn:jboss:domain:bean-validation:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:4.0">
             <datasources>
-               <datasource jta="true" jndi-name="java:jboss/datasources/taqDB" pool-name="PostgresDS" enabled="true" use-ccm="false">
+               <xa-datasource jndi-name="java:jboss/datasources/taqDB" pool-name="taqDB" enabled="true" use-ccm="true">
+                    <xa-datasource-property name="ServerName">
+                        ${env.TAQ_DB_SERVERNAME}
+                    </xa-datasource-property>
+                    <xa-datasource-property name="PortNumber">
+                       ${env.TAQ_DB_PORT} 
+                    </xa-datasource-property>
+                    <xa-datasource-property name="DatabaseName">
+                       ${env.TAQ_DB_NAME} 
+                    </xa-datasource-property>
+                    <driver>postgresql</driver>
+                    <security>
+                        <user-name>${env.TAQ_JDBC_USER}</user-name>
+                        <password>${env.TAQ_JDBC_PASS}</password>
+                    </security>
+                    <validation>
+                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker"/>
+                        <background-validation>true</background-validation>
+                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter"/>
+                    </validation>
+               </xa-datasource>
+               <datasource jta="true" jndi-name="java:jboss/datasources/taqDBOrg" pool-name="PostgresDS" enabled="true" use-ccm="false">
                     <connection-url>${env.TAQ_JDBC_URL}</connection-url>
-                    <driver-class>org.postgresql.Driver</driver-class>
                     <driver>postgresql</driver>
                     <security>
                         <user-name>${env.TAQ_JDBC_USER}</user-name>
