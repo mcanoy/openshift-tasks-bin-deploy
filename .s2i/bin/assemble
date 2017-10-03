@@ -2,6 +2,13 @@
 
 # Download and place binary in JBoss. EAR_FILE_URL variable is specified as
 # an environment variable in the BuildConfig
+
+if [[ -v $STANDALONE_FILE_NAME ]]; then
+  echo "Standalone file $STANDALONE_FILE_NAME"
+  cp /tmp/src/configuration/$STANDALONE_FILE_NAME /tmp/src/configuration/standalone-openshift.xml
+  ls -al /tmp/src/configuration
+fi
+
 if [ -z "$EAR_FILE_URL" ]; then
   echo "No EAR_FILE_URL environment variable found"
 else
@@ -9,7 +16,6 @@ else
   echo "Executing curl -u -o $JBOSS_HOME/standalone/deployments/$EAR_FILE_NAME.ear -O $EAR_FILE_URL"
   curl -o $JBOSS_HOME/standalone/deployments/$EAR_FILE_NAME.ear -O $EAR_FILE_URL
   ls -al $JBOSS_HOME/standalone/deployments/
-  rm $JBOSS_HOME/activemq-rar.rar
 fi
 
 # Call default assemble script
