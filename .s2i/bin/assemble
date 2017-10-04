@@ -2,6 +2,9 @@
 
 # Download and place binary in JBoss. EAR_FILE_URL variable is specified as
 # an environment variable in the BuildConfig
+
+cat /opt/eap/standalone/configuration/standalone-openshift.xml
+
 if [ -z "$EAR_FILE_URL" ]; then
   echo "No EAR_FILE_URL environment variable found"
 else
