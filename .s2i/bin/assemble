@@ -4,6 +4,9 @@
 # an environment variable in the BuildConfig
 
 if [ ! -z $STANDALONE_FILE_NAME ]; then
+ 
+  cat /opt/eap/standalone/configuration/standalone-openshift.xml
+ 
   echo "Standalone file $STANDALONE_FILE_NAME"
   cp /tmp/src/configuration/$STANDALONE_FILE_NAME /tmp/src/configuration/standalone-openshift.xml
   ls -al /tmp/src/configuration
