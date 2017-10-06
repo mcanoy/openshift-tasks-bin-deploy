@@ -103,6 +103,12 @@
          <logger category="org.jboss">
             <level name="INFO" />
          </logger>
+         <logger category="com.delta">
+            <level name="DEBUG" />
+         </logger>
+         <logger category="taqifsbid">
+            <level name="DEBUG" />
+         </logger>
          <logger category="org.jboss.as.config">
             <level name="DEBUG" />
          </logger>
