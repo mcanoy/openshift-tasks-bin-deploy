@@ -89,7 +89,7 @@
    </management>
    <profile>
       <subsystem xmlns="urn:jboss:domain:logging:1.5">
-         <console-handler name="CONSOLE">
+         <console-handler name="DEBUG">
             <formatter>
                <named-formatter name="COLOR-PATTERN" />
             </formatter>
@@ -99,6 +99,9 @@
          </logger>
          <logger category="org.apache.tomcat.util.modeler">
             <level name="WARN" />
+         </logger>
+         <logger category="org.jboss">
+            <level name="INFO" />
          </logger>
          <logger category="org.jboss.as.config">
             <level name="DEBUG" />
@@ -113,7 +116,7 @@
             <level name="ERROR" />
          </logger>
          <root-logger>
-            <level name="INFO" />
+            <level name="DEBUG" />
             <handlers>
                <handler name="CONSOLE" />
             </handlers>
