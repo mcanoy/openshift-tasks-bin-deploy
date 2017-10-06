@@ -5,7 +5,7 @@
 
 if [ ! -z $STANDALONE_FILE_NAME ]; then
  
-  cat /opt/eap/standalone/configuration/standalone-openshift.xml
+#  cat /opt/eap/standalone/configuration/standalone-openshift.xml
  
   echo "Standalone file $STANDALONE_FILE_NAME"
   cp /tmp/src/configuration/$STANDALONE_FILE_NAME /tmp/src/configuration/standalone-openshift.xml
@@ -16,8 +16,8 @@ if [ -z "$EAR_FILE_URL" ]; then
   echo "No EAR_FILE_URL environment variable found"
 else
   echo "Found EAR_FILE_URL environment variable for downloading artifact!"
-  echo "Executing curl -u -o $JBOSS_HOME/standalone/deployments/$EAR_FILE_NAME -O $EAR_FILE_URL"
-  curl -o $JBOSS_HOME/standalone/deployments/$EAR_FILE_NAME.ear -O $EAR_FILE_URL
+  echo "Executing curl -u /tmp/src/deployments/$EAR_FILE_NAME.ear -O $EAR_FILE_URL"
+  curl -o /tmp/src/deployments/$EAR_FILE_NAME.ear -O $EAR_FILE_URL
   ls -al $JBOSS_HOME/standalone/deployments/
 fi
 
